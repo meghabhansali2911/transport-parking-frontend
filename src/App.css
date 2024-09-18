@@ -1,38 +1,735 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Montserrat:wght@100;200;400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;0,900;1,100&display=swap");
+
+body {
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
   text-align: center;
+  background-color: rgb(246 245 245);
+  line-height: 18px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  overflow: visible;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bg-hero {
+  background-image: url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.signin-container {
+  display: block;
+  width: 890px;
+  min-height: 520px;
+  background-color: #fff;
+  box-shadow: 0px 2px 30px #ccc6;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  margin-top: 7%;
+  overflow: hidden;
+}
+
+.signin_box {
+  width: 500px;
+  min-height: 520px;
+  height: auto;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 150px 50px;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+  float: left;
+  overflow-y: auto;
+  display: table-cell;
+  border-right: 2px solid #f1f1f1;
+}
+
+.signin-title {
+  display: block;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 30px;
+}
+
+.fill-input {
+  display: relative;
+  width: 100%;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  text-indent: 12px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  padding-right: 12px;
+  background: #f8f8f8;
+  border: 1px solid #e4e4e4;
+}
+
+.filed-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 10px 0px;
+}
+
+.filed-content .icon {
+  position: absolute;
+  right: 15px;
+}
+
+.next-btn button {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 44px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  margin: auto;
+  margin-bottom: 30px;
+  box-shadow: 0px 2px 2px #fff;
+  background-color: #159aff;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.create-account a {
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #159aff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rightside_box {
+  width: 390px;
+  height: auto;
+  float: right;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #fff;
+  display: table-cell;
+  overflow: hidden;
+}
+
+.login-img {
+  padding: 50px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .rightside_box {
+    display: none;
+  }
+
+  .signin_box {
+    padding: 150px 20px !important;
+    width: 100%;
+  }
+
+  .signin-container {
+    width: 100% !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Main CSS Here */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --background-color1: #fafaff;
+  --background-color2: #ffffff;
+  --background-color3: #ededed;
+  --background-color4: #cad7fda4;
+  --primary-color: #4b49ac;
+  --secondary-color: #0c007d;
+  --Border-color: #3f0097;
+  --one-use-color: #3f0097;
+  --two-use-color: #5500cb;
+}
+
+body {
+  background-color: var(--background-color4);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  height: 70px;
+  width: 100vw;
+  padding: 0 30px;
+  background-color: var(--background-color1);
+  position: fixed;
+  z-index: 100;
+  box-shadow: 1px 1px 15px rgba(161, 182, 253, 0.825);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 600;
+  color: rgb(47, 141, 70);
+}
+
+.icn {
+  height: 30px;
+}
+
+.menuicn {
+  cursor: pointer;
+}
+
+.searchbar,
+.message,
+.logosec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar2 {
+  display: none;
+}
+
+.logosec {
+  gap: 60px;
+}
+
+.searchbar input {
+  width: 250px;
+  height: 42px;
+  border-radius: 50px 0 0 50px;
+  background-color: var(--background-color3);
+  padding: 0 20px;
+  font-size: 15px;
+  outline: none;
+  border: none;
+}
+
+.searchbtn {
+  width: 50px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 50px 50px 0px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.message {
+  gap: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.circle {
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  background-color: #fa7bb4;
+  border-radius: 50%;
+  left: 19px;
+  top: 8px;
+}
+
+.dp {
+  height: 40px;
+  width: 40px;
+  background-color: #626262;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  width: 100vw;
+  position: relative;
+  top: 70px;
+  z-index: 1;
+}
+
+.dpicn {
+  height: 42px;
+}
+
+.main {
+  height: calc(100vh - 70px);
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 40px 30px 30px 30px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-image:
+    linear-gradient(to bottom, rgb(0, 0, 85), rgb(0, 0, 50));
+}
+
+.main::-webkit-scrollbar {
+  width: 5px;
+}
+
+.main::-webkit-scrollbar-track {
+  background-color: #9e9e9eb2;
+}
+
+.box-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.nav {
+  min-height: 91vh;
+  width: 250px;
+  background-color: var(--background-color2);
+  position: absolute;
+  top: 0px;
+  left: 00;
+  box-shadow: 1px 1px 10px rgba(198, 189, 248, 0.825);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 30px 0 20px 10px;
+}
+
+.navcontainer {
+  height: calc(100vh - 70px);
+  width: 250px;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.navcontainer::-webkit-scrollbar {
+  display: none;
+}
+
+.navclose {
+  width: 80px;
+}
+
+.nav-option {
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px 0 20px;
+  gap: 20px;
+  transition: all 0.1s ease-in-out;
+}
+
+.nav-option:hover {
+  border-left: 5px solid #a2a2a2;
+  background-color: #dadada;
+  cursor: pointer;
+}
+
+.nav-img {
+  height: 30px;
+}
+
+.nav-upper-options {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 30px;
+}
+
+.option1 {
+  border-left: 5px solid #010058af;
+  background-color: var(--Border-color);
+  color: white;
+  cursor: pointer;
+}
+
+.option1:hover {
+  border-left: 5px solid #010058af;
+  background-color: var(--Border-color);
+}
+
+.box {
+  height: 130px;
+  width: 230px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+  transform: scale(1.08);
+}
+
+.box:nth-child(1) {
+  background-color: var(--one-use-color);
+}
+
+.box:nth-child(2) {
+  background-color: var(--two-use-color);
+}
+
+.box:nth-child(3) {
+  background-color: var(--one-use-color);
+}
+
+.box:nth-child(4) {
+  background-color: var(--two-use-color);
+}
+
+.box img {
+  height: 50px;
+}
+
+.box .text {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.topic {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.topic-heading {
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+/* Report Container */
+.report-container {
+  /* min-height: 300px;
+  max-width: 1200px; */
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border-color: black;
+  box-shadow: 3px 3px 10px rgb(188, 188, 188);
+  padding: 0px 20px 20px 20px;
+}
+
+/* Report Header */
+.report-header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 10px 20px;
+  border-bottom: 2px solid rgba(0, 20, 151, 0.59);
+}
+
+/* Title */
+.recent-Articles {
+  font-size: 30px;
+  font-weight: 600;
+  color: #5500cb;
+}
+
+/* Add New Vehicle Button */
+.add {
+  height: 35px;
+  width: 120px;
+  border-radius: 8px;
+  background-color: #f60808;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add:hover {
+  background-color: #d60707;
+}
+
+/* Delete Button */
+.delete {
+  height: 30px;
+  width: 80px;
+  border-radius: 6px;
+  background-color: #6ffb4c;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete:hover {
+  background-color: #57e23a;
+}
+
+/* Edit Button */
+.edit {
+  height: 30px;
+  width: 80px;
+  border-radius: 6px;
+  background-color: #5500cb;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.edit:hover {
+  background-color: #4400a5;
+}
+
+/* Report Body */
+.report-body {
+  max-width: 1160px;
+  overflow-x: auto;
+  padding: 15px;
+}
+
+/* Table Heading */
+.report-topic-heading,
+.item1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Table Rows */
+.item1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Zebra striping */
+.item1:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Hover effect on rows */
+.item1:hover {
+  background-color: #f1f1f1;
+}
+
+/* Table Content */
+.t-op {
+  font-size: 14px;
+  /* Smaller font size for table headers */
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  /* Remove unnecessary margins */
+  text-align: center;
+  /* Center the text */
+}
+
+.t-op-nextlvl {
+  font-size: 12px;
+  /* Smaller font for table rows */
+  letter-spacing: 0.4px;
+  font-weight: 500;
+  align-content: center;
+  color: #555;
+  margin: 0;
+  /* Remove unnecessary margins */
+  text-align: center;
+  /* Center the text */
+}
+
+.items {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Scrollbar Styling */
+.report-body::-webkit-scrollbar {
+  height: 8px;
+}
+
+.report-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.report-body::-webkit-scrollbar-thumb {
+  background-color: #4b49ac;
+  border-radius: 10px;
+}
+
+/* Vehicle Id (first column) highlight */
+td:first-child,
+th:first-child {
+  font-weight: 600;
+  color: #4b49ac;
+}
+
+
+/* Labels */
+.label-tag {
+  width: 100px;
+  text-align: center;
+  background-color: rgb(0, 177, 0);
+  color: white;
+  border-radius: 4px;
+}
+
+.das-bg-block {
+  background: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding: 18px 20px 18px 20px;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  margin-left: -10px;
+  margin-right: -15px;
+  position: relative;
+  width: auto !important;
+}
+
+/* Extra Styles */
+.das-bg-block {
+  background: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding: 18px 20px 18px 20px;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  margin-left: -10px;
+  margin-right: -15px;
+  position: relative;
+  width: auto !important;
+}
+
+.das-bg-block h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #15283c;
+  font-family: "Poppins", sans-serif;
+}
+
+.das-renewal p {
+  font-size: 14px;
+  color: #15283c;
+}
+
+/* src/components/SearchBar.css */
+
+.search-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  /* Allow the search box to take the full width */
+  max-width: 400px;
+  /* Limit the maximum width */
+}
+
+.input-search {
+  height: 50px;
+  width: 100%;
+  /* Make the input take full width of the container */
+  padding: 10px 40px 10px 20px;
+  /* Add padding for the icon */
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background-color: #22a6b3;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-search:focus {
+  background-color: #1b7a83;
+}
+
+.icon-search {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+  /* Prevent click events on the icon */
+}
+
+/* Optional: Hover effect for the input */
+.input-search:hover {
+  background-color: #1b7a83;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .input-search {
+    font-size: 14px;
+    /* Reduce font size on smaller screens */
+    height: 45px;
+    /* Adjust height if needed */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 400px) {
+  .input-search {
+    font-size: 12px;
+    /* Further reduce font size */
+    height: 40px;
+    /* Adjust height if needed */
   }
 }
